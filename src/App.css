@@ -3,8 +3,10 @@ main {
   grid-template-columns: 1fr 1fr;
   align-items: start;
   gap: 1rem;
-  background-color: lightgray;
+  /* background-color: lightgray; */
   max-width: 100vw;
+  height: 100vh;
+  overflow: auto;
 }
 
 table {

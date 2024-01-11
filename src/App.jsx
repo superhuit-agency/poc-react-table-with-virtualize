@@ -1,13 +1,15 @@
+import { useEffect, useRef, useState } from "react";
+
 import "./App.css";
 import { NativeTable } from "./NativeTable.jsx";
 import { TanStackTable } from "./TanStackTable.jsx";
 
 import DATA from "./data.json";
-import { useEffect, useState } from "react";
 
 const { columns, records } = DATA;
 function App() {
   const [rows, setRows] = useState(records);
+  const mainRef = useRef(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,9 +23,9 @@ function App() {
 
   return (
     <div className="App">
-      <main>
-        <NativeTable columns={columns} rows={rows} />
-        <TanStackTable columns={columns} rows={rows} />
+      <main ref={mainRef}>
+        <NativeTable columns={columns} rows={rows} parentRef={mainRef} />
+        <TanStackTable columns={columns} rows={rows} parentRef={mainRef} />
       </main>
     </div>
   );
