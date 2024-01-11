@@ -35,7 +35,10 @@ export const NativeTable = ({ columns, rows, parentRef }) => {
               >
                 {columns.map((col, index) => (
                   <td key={`${row.id}-${col.name}`}>
-                    <Cell value={row[col.name]} />
+                    <Cell
+                      defaultValue={row?.[col.name] ?? ""}
+                      label={col.name}
+                    />
                   </td>
                 ))}
               </tr>
