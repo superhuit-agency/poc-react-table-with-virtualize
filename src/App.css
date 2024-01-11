@@ -9,8 +9,14 @@ main {
   overflow: auto;
 }
 
-table {
+.native-table {
   background-color: white;
+}
+.tanstack-table {
+  background-color: lightgray;
+}
+
+table {
   border: 1px solid lightgray;
 }
 

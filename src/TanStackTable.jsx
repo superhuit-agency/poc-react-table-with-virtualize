@@ -38,7 +38,10 @@ export const TanStackTable = ({ columns, rows, parentRef }) => {
   });
 
   return (
-    <div style={{ height: `${virtualizer.getTotalSize()}px` }}>
+    <div
+      className="tanstack-table"
+      style={{ height: `${virtualizer.getTotalSize()}px` }}
+    >
       <table>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => {

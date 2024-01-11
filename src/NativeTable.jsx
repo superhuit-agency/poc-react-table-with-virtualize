@@ -10,7 +10,10 @@ export const NativeTable = ({ columns, rows, parentRef }) => {
   });
 
   return (
-    <div style={{ height: `${virtualizer.getTotalSize()}px` }}>
+    <div
+      className="native-table"
+      style={{ height: `${virtualizer.getTotalSize()}px` }}
+    >
       <table>
         <thead>
           <tr>

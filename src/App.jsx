@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <main ref={mainRef}>
-        <NativeTable columns={columns} rows={rows} parentRef={mainRef} />
+        {/* <NativeTable columns={columns} rows={rows} parentRef={mainRef} /> */}
         <TanStackTable columns={columns} rows={rows} parentRef={mainRef} />
       </main>
     </div>
