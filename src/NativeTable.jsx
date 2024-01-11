@@ -1,3 +1,5 @@
+import { Cell } from "./Cell";
+
 export const NativeTable = ({ columns, rows }) => {
   return (
     <table>
@@ -12,7 +14,9 @@ export const NativeTable = ({ columns, rows }) => {
         {rows.map((row, index) => (
           <tr key={row.id}>
             {columns.map((col, index) => (
-              <td key={`${row.id}-${col.name}`}>{row[col.name]}</td>
+              <td key={`${row.id}-${col.name}`}>
+                <Cell value={row[col.name]} />
+              </td>
             ))}
           </tr>
         ))}

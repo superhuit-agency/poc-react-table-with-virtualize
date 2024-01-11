@@ -4,6 +4,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useMemo } from "react";
+import { Cell } from "./Cell";
 
 export const TanStackTable = ({ columns, rows }) => {
   const columnsDef = useMemo(
@@ -12,11 +13,7 @@ export const TanStackTable = ({ columns, rows }) => {
         accessorKey: col.name,
         accessorFn: (row) => row[col.name],
         header: () => col?.string ?? col.name,
-        cell: ({ row }) => (
-          <span key={`${row.id}-${col.name}`}>
-            {row.original?.[col.name] ?? ""}
-          </span>
-        ),
+        cell: ({ row }) => <Cell value={row.original?.[col.name] ?? ""} />,
         footer: () => "",
       })),
     [columns]
