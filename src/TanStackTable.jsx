@@ -13,7 +13,12 @@ export const TanStackTable = ({ columns, rows }) => {
         accessorKey: col.name,
         accessorFn: (row) => row[col.name],
         header: () => col?.string ?? col.name,
-        cell: ({ row }) => <Cell value={row.original?.[col.name] ?? ""} />,
+        cell: ({ row }) => (
+          <Cell
+            defaultValue={row.original?.[col.name] ?? ""}
+            label={col.name}
+          />
+        ),
         footer: () => "",
       })),
     [columns]

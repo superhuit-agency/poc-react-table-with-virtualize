@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const { columns, records } = DATA;
 function App() {
-  const [rows, setRows] = useState(records);
+  const [rows, setRows] = useState(records.slice(0, 100));
 
   useEffect(() => {
     setTimeout(() => {

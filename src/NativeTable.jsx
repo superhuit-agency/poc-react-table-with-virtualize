@@ -15,7 +15,7 @@ export const NativeTable = ({ columns, rows }) => {
           <tr key={row.id}>
             {columns.map((col, index) => (
               <td key={`${row.id}-${col.name}`}>
-                <Cell value={row[col.name]} />
+                <Cell defaultValue={row?.[col.name] ?? ""} label={col.name} />
               </td>
             ))}
           </tr>
