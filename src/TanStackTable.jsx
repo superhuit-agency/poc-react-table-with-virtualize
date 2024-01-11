@@ -22,7 +22,9 @@ export const TanStackTable = ({ columns, rows, parentRef }) => {
         accessorKey: col.name,
         accessorFn: (row) => row?.[col.name] ?? "",
         header: () => col?.string ?? col.name,
-        cell: ({ row, ...info }) => <Cell value={info.getValue()} />,
+        cell: ({ row, ...info }) => (
+          <Cell defaultValue={info.getValue()} label={col.name} />
+        ),
         footer: () => "",
         debugTable: true,
       })),
